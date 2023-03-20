@@ -77,9 +77,9 @@ paths:
             schema:
               allOf:
                 - $ref: "#/components/schemas/CreateJobRequest"
-                - example:
-                    company: heliotropes
-                    position: monsters
+                # - example:
+                #     company: heliotropes
+                #     position: monsters
             example:
               company: heliotropes
               position: monsters
@@ -222,7 +222,7 @@ components:
         company: random
         position: fullStack
   securitySchemes:
-    bearer:
+    httpBearer:
       type: http
       scheme: bearer
 security: []
