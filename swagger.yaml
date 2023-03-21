@@ -19,12 +19,7 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "#/components/schemas/RegisterUserRequest"
-                - example:
-                    name: susan
-                    email: susan@gmail.com
-                    password: secret
+              $ref: "#/components/schemas/RegisterUserRequest"
             example:
               name: susan
               email: susan@gmail.com
@@ -77,9 +72,9 @@ paths:
             schema:
               allOf:
                 - $ref: "#/components/schemas/CreateJobRequest"
-                # - example:
-                #     company: heliotropes
-                #     position: monsters
+                - example:
+                    company: heliotropes
+                    position: monsters
             example:
               company: heliotropes
               position: monsters
@@ -104,7 +99,14 @@ paths:
       deprecated: false
       security:
         - bearer: []
-  /jobs/640b6616c53da010d4d465be:
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The user ID
     get:
       tags:
         - Jobs
@@ -131,7 +133,7 @@ paths:
       deprecated: false
       security:
         - bearer: []
-  /jobs/640b54eeb649035c4cd62690:
+
     patch:
       tags:
         - Jobs
@@ -222,7 +224,7 @@ components:
         company: random
         position: fullStack
   securitySchemes:
-    httpBearer:
+    bearer:
       type: http
       scheme: bearer
 security: []
