@@ -36,18 +36,14 @@ paths:
       tags:
         - Auth
       summary: Login User
-      operationId: LoginUsers
+      operationId: LoginUser
       parameters: []
       requestBody:
         description: ""
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "#/components/schemas/LoginUserRequest"
-                - example:
-                    email: susan@gmail.com
-                    password: secret
+              $ref: "#/components/schemas/LoginUserRequest"
             example:
               email: susan@gmail.com
               password: secret
@@ -70,9 +66,8 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "#/components/schemas/CreateJobRequest"
-            example:
+              $ref: "#/components/schemas/CreateJobRequest"
+              example:
               company: heliotropes
               position: monsters
         required: true
@@ -117,8 +112,6 @@ paths:
       deprecated: false
       security:
         - bearer: []
-
-
     patch:
       tags:
         - Jobs
@@ -130,11 +123,7 @@ paths:
         content:
           application/json:
             schema:
-              allOf:
-                - $ref: "#/components/schemas/UpdateJobRequest"
-                - example:
-                    company: random
-                    position: fullStack
+              $ref: "#/components/schemas/UpdateJobRequest"
             example:
               company: random
               position: fullStack
@@ -146,7 +135,7 @@ paths:
       deprecated: false
       security:
         - bearer: []
-          delete:
+    delete:
       tags:
         - Jobs
       summary: Delete Job
