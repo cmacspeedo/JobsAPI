@@ -104,9 +104,9 @@ paths:
       - in: path
         name: id
         schema:
-          type: integer
+          type: string
         required: true
-        description: The user ID
+        description: The job ID
     get:
       tags:
         - Jobs
@@ -120,19 +120,7 @@ paths:
       deprecated: false
       security:
         - bearer: []
-    delete:
-      tags:
-        - Jobs
-      summary: Delete Job
-      operationId: DeleteJob
-      parameters: []
-      responses:
-        "200":
-          description: ""
-          headers: {}
-      deprecated: false
-      security:
-        - bearer: []
+
 
     patch:
       tags:
@@ -154,6 +142,19 @@ paths:
               company: random
               position: fullStack
         required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+            delete:
+      tags:
+        - Jobs
+      summary: Delete Job
+      operationId: DeleteJob
+      parameters: []
       responses:
         "200":
           description: ""
