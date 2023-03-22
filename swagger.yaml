@@ -36,7 +36,7 @@ paths:
       tags:
         - Auth
       summary: Login User
-      operationId: LoginUser
+      operationId: LoginUsers
       parameters: []
       requestBody:
         description: ""
@@ -72,9 +72,6 @@ paths:
             schema:
               allOf:
                 - $ref: "#/components/schemas/CreateJobRequest"
-                - example:
-                    company: heliotropes
-                    position: monsters
             example:
               company: heliotropes
               position: monsters
@@ -149,7 +146,7 @@ paths:
       deprecated: false
       security:
         - bearer: []
-            delete:
+          delete:
       tags:
         - Jobs
       summary: Delete Job
